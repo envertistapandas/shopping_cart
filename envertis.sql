@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2021 at 12:33 PM
+-- Generation Time: Apr 16, 2021 at 03:08 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -93,18 +93,24 @@ CREATE TABLE `customers` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT current_timestamp(),
   `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pin_code` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `is_admin`, `password`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Milan Kundu', 'milankundu2@gmail.com', '8521479635', 'Sodepur', NULL, NULL, '0000-00-00 00:00:00', NULL, NULL),
-(4, 'Tapan Sarker', 'tapandas025@gmail.com', '8001496518', 'Sonarpur', NULL, NULL, '2021-04-16 09:21:12', '2021-04-16 09:21:12', '2021-04-16 09:21:12'),
-(5, 'Paramita Di', 'paramita123@gmail.com', '9874563212', 'Kolkata', NULL, NULL, '2021-04-16 09:42:13', '2021-04-16 09:42:13', '2021-04-16 09:42:13'),
-(6, 'Paramita Di', 'paramita123@gmail.com', '9874563212', 'Kolkata', NULL, NULL, '2021-04-16 09:47:13', '2021-04-16 09:47:13', '2021-04-16 09:47:13');
+INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `is_admin`, `password`, `deleted_at`, `created_at`, `updated_at`, `country`, `state`, `pin_code`) VALUES
+(1, 'Milan Kundu', 'milankundu2@gmail.com', '8521479635', 'Sodepur', NULL, NULL, '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, NULL),
+(4, 'Tapan Sarker', 'tapandas025@gmail.com', '8001496518', 'Sonarpur', NULL, NULL, '2021-04-16 09:21:12', '2021-04-16 09:21:12', '2021-04-16 09:21:12', NULL, NULL, NULL),
+(5, 'Paramita Di', 'paramita123@gmail.com', '9874563212', 'Kolkata', NULL, NULL, '2021-04-16 09:42:13', '2021-04-16 09:42:13', '2021-04-16 09:42:13', NULL, NULL, NULL),
+(6, 'Paramita Di', 'paramita123@gmail.com', '9874563212', 'Kolkata', NULL, NULL, '2021-04-16 09:47:13', '2021-04-16 09:47:13', '2021-04-16 09:47:13', NULL, NULL, NULL),
+(7, 'Anil Kumar', 'anil123@gmail.com', '8521479632', 'Tallygaunj', NULL, NULL, '2021-04-16 12:54:34', '2021-04-16 12:54:34', '2021-04-16 12:54:34', '1', '2', NULL),
+(8, 'Sunita Ghose', 'sunita.ghosh@envertis.com.au', '7412589633', 'Barrackpur', NULL, NULL, '2021-04-16 13:02:08', '2021-04-16 13:02:08', '2021-04-16 13:02:08', 'South Africa', 'M.P', NULL),
+(9, 'Saroj Das', 'saro1234@gmail.com', '9632587412', 'Garia Milan Sangha', NULL, NULL, '2021-04-16 13:05:17', '2021-04-16 13:05:17', '2021-04-16 13:05:17', 'Newzeland', 'Mumbai', 987456);
 
 -- --------------------------------------------------------
 
@@ -343,7 +349,7 @@ ALTER TABLE `categorys`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
